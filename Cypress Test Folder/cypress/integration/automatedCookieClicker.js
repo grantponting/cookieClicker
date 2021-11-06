@@ -1,16 +1,18 @@
 /// <reference types="cypress" />
-import cookieClickerTest from '../../support/index';
+import cookieClick from '../../support/Settings/functions';
 
 
 describe('Basic Tests', () =>{
 	
 	it('Click', () =>{
-		const cookieClicker = new cookieClickerTest()
+		const cookieClicker = new cookieClick();
 		cy.navigateToCookieClicker();
 
-		cookieClicker.getLoadingScreen().should("not.exist"); 
-
 		cy.turnOffNumberShortening();
+
+
+		
+
 		cookieClicker.getBigCookie().click(); 
 		
 	})
