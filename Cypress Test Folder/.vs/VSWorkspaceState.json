@@ -3,9 +3,11 @@
     "",
     "\\cypress",
     "\\cypress\\integration",
-    "\\cypress\\integration\\Pages",
-    "\\cypress\\support"
+    "\\cypress\\integration\\Individual Tests",
+    "\\cypress\\plugins",
+    "\\cypress\\support",
+    "\\cypress\\support\\Settings"
   ],
-  "SelectedNode": "\\cypress\\integration\\Pages\\Script1.js",
+  "SelectedNode": "\\cypress\\integration\\Individual Tests\\keepClicking.js",
   "PreviewInSolutionExplorer": false
 }

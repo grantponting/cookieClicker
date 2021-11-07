@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import cookieClick from '../../support/Settings/functions';
+import cookieClick from '../../support/variables/cookie';
 
 
 describe('Changes Settings', () =>{

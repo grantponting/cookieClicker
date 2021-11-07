@@ -1,4 +1,4 @@
-import cookieClick from './functions';
+import cookieClick from './cookie';
 
 
 Cypress.Commands.add('navigateToCookieClicker', () =>{			//Navigates to the site and waits for the loading screen to disappear
@@ -13,4 +13,3 @@ Cypress.Commands.add('turnOffNumberShortening', () =>{           //Unshortens th
 	cookieClicker.getShortNumbersButton().click();
 	cookieClicker.getOptions().click();
 })
-

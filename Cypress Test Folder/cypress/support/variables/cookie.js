@@ -14,7 +14,7 @@ class cookieClick {
 	getLoadingScreen(){
 		return cy.get('div#loader')
 	}
-	clickVisibleButton = () => {
+	clickVisibleButton(){
         cy.get( 'body', { log: false }).then( $search => {
             const isVisible = $search.find( 'div#bigCookie').is( ':visible' );
             if ( isVisible ) {
@@ -23,5 +23,8 @@ class cookieClick {
             }
         } );
     }
+	clickAndUpgrade(){
+	
+	}
 }
 export default cookieClick
