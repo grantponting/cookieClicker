@@ -1,15 +1,16 @@
 import cookieClick from './cookie';
+import preClick from './preClick';
 
 
 Cypress.Commands.add('navigateToCookieClicker', () =>{			//Navigates to the site and waits for the loading screen to disappear
-	const cookieClicker = new cookieClick();
+	const preClicker = new preClick();
 	cy.visit('https://orteil.dashnet.org/cookieclicker/');
-	cookieClicker.getLoadingScreen().should("not.exist"); 
+	preClicker.getLoadingScreen().should("not.exist"); 
 })
 
 Cypress.Commands.add('turnOffNumberShortening', () =>{           //Unshortens the numbers so that the full numbers are read in
-	const cookieClicker = new cookieClick();
-	cookieClicker.getOptions().click();
-	cookieClicker.getShortNumbersButton().click();
-	cookieClicker.getOptions().click();
+	const preClicker = new preClick();
+	preClicker.getOptions().click();
+	preClicker.getShortNumbersButton().click();
+	preClicker.getOptions().click();
 })

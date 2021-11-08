@@ -6,8 +6,6 @@ describe('Large amount of clicks', () =>{
 	
 	it('Clicks', () =>{
 		cy.viewport(1080, 1000);					//Purely cosmetic. Hard to view auto clicks without this change
-		
-		const cookieClicker = new cookieClick();
 		cy.navigateToCookieClicker();
 
 
@@ -16,6 +14,7 @@ describe('Large amount of clicks', () =>{
 			return false
 		}); 
 
+		const cookieClicker = new cookieClick();
 		cookieClicker.clickVisibleButton();
 	})
 })

@@ -7,7 +7,6 @@ describe('Basic Tests', () =>{
 	it('Click', () =>{
 		const cookieClicker = new cookieClick();
 		cy.navigateToCookieClicker();
-
 		cy.turnOffNumberShortening();
 
 
