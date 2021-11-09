@@ -4,11 +4,11 @@ import './commands'
 
 class upgradesClass{
 
-	getProduct(){
-		return cy.get('div#products', { log: false }).get('div.content', { log: false }).get('span.price', { log: false });
+	getProduct(int){
+		return cy.get('div#product' + int, {log : false});
 	}
 	getUpgrade(){
-		return cy.get('div#upgrade0', { log: false });
+		return cy.get('div#upgrade0', {log:false});
 	}
 
 }

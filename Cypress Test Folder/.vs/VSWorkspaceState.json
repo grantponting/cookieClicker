@@ -6,8 +6,8 @@
     "\\cypress\\integration\\Individual Tests",
     "\\cypress\\plugins",
     "\\cypress\\support",
-    "\\cypress\\support\\Settings"
+    "\\cypress\\support\\variables"
   ],
-  "SelectedNode": "\\cypress\\integration\\Individual Tests\\keepClicking.js",
+  "SelectedNode": "\\cypress\\integration\\Individual Tests\\clickAndUpgrade.js",
   "PreviewInSolutionExplorer": false
 }

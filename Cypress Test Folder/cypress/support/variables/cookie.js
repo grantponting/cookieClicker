@@ -21,28 +21,42 @@ class cookieClick {
 
 	upgradeTest(int){
 		const upgrade = new upgrades();
-		if(int < 18)
-			upgrade.getProduct().get('span#productPrice' + int, { log: false }).invoke('text', ({ log: false })).then((text) =>{ 
-				int = int + 1;
-				this.upgradeTest(int); 
+		if(int < 18){
+			cy.get("body", {log : false}).then($body => { 
+				if($body.find('div#upgrade0.crate.upgrade.enabled').length != 0){			//upgrades first overall upgrade if it can be 
+					upgrade.getUpgrade().click({log:false}); 
+				}
+				else if ($body.find('div#product' + int + '[class*="product unlocked enabled"]').length != 0) {  //buys the building if it can be
+					upgrade.getProduct(int).click({log:false});
+					int = int + 1;
+					this.upgradeTest(int);
+				}
+				else{     //continues through the list of buildings
+			 		int = int + 1;
+					this.upgradeTest(int);
+				}
 			});
-		else{
-			return false; 
 		}
+		else {
+			int = 0; 
+			return false;
+		}	 
 	}
 
-
-
-	clickAndUpgrade(){
+	clickAndUpgrade(int){			//inifinitely clicks the big cookie, after 21 clicks it will check the to see if it can upgrade anything
 		cy.get( 'body', { log: false }).then( $search => {
             const isVisible = $search.find( 'div#bigCookie').is( ':visible' );
             if ( isVisible ) {
-                cy.get( 'div#bigCookie', { log: false }).click({ log: false });
-				
-				const cookieClicker = new cookieClick();
-				cookieClicker.upgradeTest(0); 
+                cy.get( 'div#bigCookie', { log: false }).click({ log: false });    
+				int = int +1;
 
-                this.clickAndUpgrade();
+				if(int > 20){
+					const cookieClicker = new cookieClick();
+					cookieClicker.upgradeTest(0); 
+					int = 0; 
+				}
+
+                this.clickAndUpgrade(int);
             }
         } );
 	}

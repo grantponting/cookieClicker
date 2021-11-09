@@ -15,6 +15,6 @@ describe('Large amount of clicks', () =>{
 		}); 
 
 		const cookieClicker = new cookieClick();
-		cookieClicker.clickAndUpgrade();
+		cookieClicker.clickAndUpgrade(0);				//calls the click and upgrade recursive function to begin the fun
 	})
 })
