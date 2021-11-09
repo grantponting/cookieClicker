@@ -33,12 +33,7 @@ storeSection3 = driver.find_element_by_id("storeBulk100")
 items = [driver.find_element_by_id("productPrice" + str(i)) for i in range(1, -1, -1)]
  
 actions = ActionChains(driver)
-# actions.click(cookie)
- 
-         #range is how many times it clicks the cookie
-# =============================================================================
-# try:
-# =============================================================================
+
 while True: 
    cookie.click()
    count = int(cookie_count.text.split(" ")[0])
@@ -49,9 +44,3 @@ while True:
          upgrade_actions.move_to_element(item)
          upgrade_actions.click()
          upgrade_actions.perform()
-# =============================================================================
-# =============================================================================
-# except:
-#    print("you failed")
-# =============================================================================
-# =============================================================================
