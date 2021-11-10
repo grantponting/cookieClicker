@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^8.7.0"
+  },
+  "dependencies": {
+    "jshint": "^2.13.1",
+    "jslint": "^0.12.1"
   }
 }

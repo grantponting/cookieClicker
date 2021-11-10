@@ -1,4 +1,4 @@
-import cookieClick from './cookie';
+import cookieClick from './cookieClickerPOM';
 import preClick from './preClick';
 
 
@@ -6,11 +6,11 @@ Cypress.Commands.add('navigateToCookieClicker', () =>{			//Navigates to the site
 	const preClicker = new preClick();
 	cy.visit('https://orteil.dashnet.org/cookieclicker/');
 	preClicker.getLoadingScreen().should("not.exist"); 
-})
+});
 
 Cypress.Commands.add('turnOffNumberShortening', () =>{           //Unshortens the numbers so that the full numbers are read in
 	const preClicker = new preClick();
 	preClicker.getOptions().click();
 	preClicker.getShortNumbersButton().click();
 	preClicker.getOptions().click();
-})
+});
